@@ -141,12 +141,17 @@ local function SellToPed(ped)
 
     local drugType = math.random(1, #availableDrugs)
     local bagAmount = math.random(1, availableDrugs[drugType].amount)
-    if bagAmount > 15 then bagAmount = math.random(9, 15) end
-
+    if bagAmount > 3 then bagAmount = math.random(1,3) end
     currentOfferDrug = availableDrugs[drugType]
-
+    if Config.NotifyType == 'qb' then
+        QBCore.Functions.Notify("A local looks interested...", "info", 2500)
+    elseif Config.NotifyType == "okok" then
+        exports['okokNotify']:Alert("POTENTIAL CUSTOMER", "A local looks interested...", 2500, "info")
+    end 
+    local xppriceadd = exports["mz-skills"]:GetCurrentSkill("Street Reputation")
     local ddata = Config.DrugsPrice[currentOfferDrug.item]
-    local randomPrice = math.random(ddata.min, ddata.max) * bagAmount
+    local randomPrice = (math.random(ddata.min, ddata.max) + math.ceil(xppriceadd.Current/Config.xpDivide)) * bagAmount 
+    
     if scamChance <= Config.ScamChance then randomPrice = math.random(3, 10) * bagAmount end
 
     SetEntityAsNoLongerNeeded(ped)
@@ -213,6 +218,7 @@ local function SellToPed(ped)
                                     label = Lang:t("info.target_drug_offer", {bags = bagAmount, drugLabel = currentOfferDrug.label, randomPrice = randomPrice}),
                                     action = function(entity)
                                         TriggerServerEvent('qb-drugs:server:sellCornerDrugs', availableDrugs[drugType].item, bagAmount, randomPrice)
+                                        exports["mz-skills"]:UpdateSkill("Street Reputation", bagAmount)
                                         hasTarget = false
                                         LoadAnimDict("gestures@f@standing@casual")
                                         TaskPlayAnim(PlayerPedId(), "gestures@f@standing@casual", "gesture_point", 3.0, 3.0, -1, 49, 0, 0, 0, 0)
