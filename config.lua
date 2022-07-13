@@ -3,6 +3,78 @@ Config.Dealers = {}
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 Config.PoliceCallChance = 15
 
+Config.NotifyType = 'okok'
+
+-- Selling Config
+Config.SuccessChance = 70
+Config.ScamChance = 20
+Config.RobberyChance = 10
+Config.MinimumDrugSalePolice = 0
+
+-- Price variables
+Config.xpDivide = 10 -- Effect of XP on price. At 20, 20xp results in $1 more per drug sold (20/20), at 10, 20xp results in $2 more per drug sold (20/10) 
+
+Config.CornerSellingDrugsList = {
+    "weed_white-widow",
+    "weed_skunk",
+    "weed_purple-haze",
+    "weed_og-kush",
+    "weed_amnesia",
+    "weed_ak47",
+    "crack_baggy",
+    "cokebaggy",
+    "methbaggy",
+    "heroin",
+    "puremethbaggy",
+}
+
+Config.DrugsPrice = {
+    ["weed_white-widow"] = {
+        min = 15,
+        max = 24,
+    },
+    ["weed_og-kush"] = {
+        min = 15,
+        max = 28,
+    },
+    ["weed_skunk"] = {
+        min = 15,
+        max = 31,
+    },
+    ["weed_amnesia"] = {
+        min = 18,
+        max = 34,
+    },
+    ["weed_purple-haze"] = {
+        min = 18,
+        max = 37,
+    },
+    ["weed_ak47"] = {
+        min = 18,
+        max = 40,
+    },
+    ["crack_baggy"] = {
+        min = 18,
+        max = 34,
+    },
+    ["cokebaggy"] = {
+        min = 20,
+        max = 40,
+    },
+    ["heroin"] = {
+        min = 30,
+        max = 30,
+    },
+    ["methbaggy"] = {
+        min = 20,
+        max = 20,
+    },
+    ["puremethbaggy"] = {
+        min = 35,
+        max = 35,
+    },
+}
+
 -- Shop Config
 Config.Products = {
     [1] = {
@@ -94,63 +166,6 @@ Config.Products = {
         type = "item",
         slot = 10,
         minrep = 180,
-    },
-}
-
--- Selling Config
-Config.SuccessChance = 50
-Config.ScamChance = 25
-Config.RobberyChance = 25
-Config.MinimumDrugSalePolice = 0
-
-Config.CornerSellingDrugsList = {
-    "weed_white-widow",
-    "weed_skunk",
-    "weed_purple-haze",
-    "weed_og-kush",
-    "weed_amnesia",
-    "weed_ak47",
-    "crack_baggy",
-    "cokebaggy",
-    "meth"
-}
-
-Config.DrugsPrice = {
-    ["weed_white-widow"] = {
-        min = 15,
-        max = 24,
-    },
-    ["weed_og-kush"] = {
-        min = 15,
-        max = 28,
-    },
-    ["weed_skunk"] = {
-        min = 15,
-        max = 31,
-    },
-    ["weed_amnesia"] = {
-        min = 18,
-        max = 34,
-    },
-    ["weed_purple-haze"] = {
-        min = 18,
-        max = 37,
-    },
-    ["weed_ak47"] = {
-        min = 18,
-        max = 40,
-    },
-    ["crack_baggy"] = {
-        min = 18,
-        max = 34,
-    },
-    ["cokebaggy"] = {
-        min = 18,
-        max = 37,
-    },
-    ["meth"] = {
-        min = 18,
-        max = 40,
     },
 }
 
