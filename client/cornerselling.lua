@@ -257,6 +257,7 @@ local function SellToPed(ped)
                             exports['qb-core']:KeyPressed()
                             textDrawn = false
                             TriggerServerEvent('qb-drugs:server:sellCornerDrugs', availableDrugs[drugType].item, bagAmount, randomPrice)
+                            exports["mz-skills"]:UpdateSkill("Street Reputation", bagAmount)
                             hasTarget = false
                             LoadAnimDict("gestures@f@standing@casual")
                             TaskPlayAnim(PlayerPedId(), "gestures@f@standing@casual", "gesture_point", 3.0, 3.0, -1, 49, 0, 0, 0, 0)
