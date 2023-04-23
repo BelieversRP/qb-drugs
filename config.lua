@@ -12,6 +12,7 @@ Config.Products = {}
 Config.SuccessChance = 70
 Config.ScamChance = 10
 Config.RobberyChance = 10
+Config.Payment = "dirtymoney" -- change this to "dirtymoney". "markedbills" or "cash"
 Config.MinimumDrugSalePolice = 0
 
 Config.DrugsPrice = {
