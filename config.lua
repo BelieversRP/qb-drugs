@@ -1,171 +1,95 @@
 Config = Config or {}
 Config.Dealers = {}
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
-Config.PoliceCallChance = 15
+Config.PoliceCallChance = 50
 
-Config.NotifyType = 'okok'
+Config.NotifyType = 'qb' -- change to "okok" if you use that, ig
+
+-- Shop Config
+Config.Products = {}
 
 -- Selling Config
 Config.SuccessChance = 70
-Config.ScamChance = 20
+Config.ScamChance = 10
 Config.RobberyChance = 10
 Config.MinimumDrugSalePolice = 0
 
--- Price variables
-Config.xpDivide = 10 -- Effect of XP on price. At 20, 20xp results in $1 more per drug sold (20/20), at 10, 20xp results in $2 more per drug sold (20/10) 
-
-Config.CornerSellingDrugsList = {
-    "weed_white-widow",
-    "weed_skunk",
-    "weed_purple-haze",
-    "weed_og-kush",
-    "weed_amnesia",
-    "weed_ak47",
-    "crack_baggy",
-    "cokebaggy",
-    "methbaggy",
-    "heroin",
-    "puremethbaggy",
-}
-
 Config.DrugsPrice = {
-    ["weed_white-widow"] = {
-        min = 15,
-        max = 24,
+    ["peyote_button"] = {
+        min = 25,
+        max = 50,
     },
-    ["weed_og-kush"] = {
-        min = 15,
-        max = 28,
+    ["moonshine"] = {
+        min = 75,
+        max = 100,
+    },
+    ["bootlegvodka"] = {
+        min = 75,
+        max = 100,
+    },
+    ["shroombaggy"] = {
+        min = 50,
+        max = 75,
     },
     ["weed_skunk"] = {
-        min = 15,
-        max = 31,
+        min = 75,
+        max = 100,
     },
-    ["weed_amnesia"] = {
-        min = 18,
-        max = 34,
+    ["weed_og-kush"] = {
+        min = 75,
+        max = 100,
     },
-    ["weed_purple-haze"] = {
-        min = 18,
-        max = 37,
+    ["weed_white-widow"] = {
+        min = 75,
+        max = 100,
     },
     ["weed_ak47"] = {
-        min = 18,
-        max = 40,
+        min = 75,
+        max = 100,
+    },
+    ["weed_amnesia"] = {
+        min = 75,
+        max = 100,
+    },
+    ["weed_purple-haze"] = {
+        min = 75,
+        max = 100,
+    },
+    ["weed_gelato"] = {
+        min = 100,
+        max = 125,
+    },
+    ["weed_zkittlez"] = {
+        min = 100,
+        max = 125,
+    },
+    ["morphinebaggy"] = {
+        min = 80,
+        max = 120,
+    },
+    ["morphine"] = {
+        min = 100,
+        max = 150,
+    },
+    ["heroinbaggy"] = {
+        min = 80,
+        max = 120,
+    },
+    ["liquidheroin"] = {
+        min = 100,
+        max = 150,
     },
     ["crack_baggy"] = {
-        min = 18,
-        max = 34,
+        min = 80,
+        max = 120,
+    },
+    ["meth"] = {
+        min = 120,
+        max = 170,
     },
     ["cokebaggy"] = {
-        min = 20,
-        max = 40,
-    },
-    ["heroin"] = {
-        min = 30,
-        max = 30,
-    },
-    ["methbaggy"] = {
-        min = 20,
-        max = 20,
-    },
-    ["puremethbaggy"] = {
-        min = 35,
-        max = 35,
-    },
-}
-
--- Shop Config
-Config.Products = {
-    [1] = {
-        name = "weed_white-widow",
-        price = 15,
-        amount = 150,
-        info = {},
-        type = "item",
-        slot = 1,
-        minrep = 0,
-    },
-    [2] = {
-        name = "weed_skunk",
-        price = 15,
-        amount = 150,
-        info = {},
-        type = "item",
-        slot = 2,
-        minrep = 20,
-    },
-    [3] = {
-        name = "weed_purple-haze",
-        price = 15,
-        amount = 150,
-        info = {},
-        type = "item",
-        slot = 3,
-        minrep = 40,
-    },
-    [4] = {
-        name = "weed_og-kush",
-        price = 15,
-        amount = 150,
-        info = {},
-        type = "item",
-        slot = 4,
-        minrep = 60,
-    },
-    [5] = {
-        name = "weed_amnesia",
-        price = 15,
-        amount = 150,
-        info = {},
-        type = "item",
-        slot = 5,
-        minrep = 80,
-    },
-    [6] = {
-        name = "weed_white-widow_seed",
-        price = 15,
-        amount = 150,
-        info = {},
-        type = "item",
-        slot = 6,
-        minrep = 100,
-    },
-    [7] = {
-        name = "weed_skunk_seed",
-        price = 15,
-        amount = 150,
-        info = {},
-        type = "item",
-        slot = 7,
-        minrep = 120,
-    },
-    [8] = {
-        name = "weed_purple-haze_seed",
-        price = 15,
-        amount = 150,
-        info = {},
-        type = "item",
-        slot = 8,
-        minrep = 140,
-    },
-    [9] = {
-        name = "weed_og-kush_seed",
-        price = 15,
-        amount = 150,
-        info = {},
-        type = "item",
-        slot = 9,
-        minrep = 160,
-    },
-    [10] = {
-        name = "weed_amnesia_seed",
-        price = 15,
-        amount = 150,
-        info = {},
-        type = "item",
-        slot = 10,
-        minrep = 180,
+        min = 100,
+        max = 150,
     },
 }
 
@@ -173,20 +97,30 @@ Config.Products = {
 Config.UseMarkedBills = false -- true for marked bills, false for cash
 Config.DeliveryRepGain = 1 -- amount of rep gained per delivery
 Config.DeliveryRepLoss = 1 -- amount of rep lost if delivery wrong or late
-Config.PoliceDeliveryModifier = 2 -- amount to multiply active cop count by
+Config.PoliceDeliveryModifier = 0 -- amount to multiply active cop count by
 Config.WrongAmountFee = 2 -- divide the payout by this value for wrong delivery amount
 Config.OverdueDeliveryFee = 4 -- divide the payout by this value for overdue delivery
 
 Config.DeliveryItems = {
     [1] = {
-        ["item"] = "weed_brick",
-        ["minrep"] = 0,
-        ['payout'] = 1000
+        ["item"] = "heroin_1oz",
+        ["minrep"] = 100,
+        ['payout'] = 500
     },
     [2] = {
-        ["item"] = "coke_brick",
-        ["minrep"] = 0,
-        ['payout'] = 1000
+        ["item"] = "crack_1oz",
+        ["minrep"] = 150,
+        ['payout'] = 500
+    },
+    [3] = {
+        ["item"] = "meth_1oz",
+        ["minrep"] = 200,
+        ['payout'] = 500
+    },
+    [4] = {
+        ["item"] = "coke_1oz",
+        ["minrep"] = 250,
+        ['payout'] = 500
     },
 }
 
@@ -210,5 +144,45 @@ Config.DeliveryLocations = {
     [5] = {
         ["label"] = "Bahama Mamas",
         ["coords"] = vector3(-1383.1, -639.99, 28.67),
+    },
+    [6] = {
+        ["label"] = "Little Soul Apartment",
+        ["coords"] = vector3(-790.72, -964.07, 15.16), 
+    },
+    [7] = {
+        ["label"] = "Gabriela's Mirror Park",
+        ["coords"] = vector3(1143.71, -299.11, 68.80), 
+    },
+    [8] = {
+        ["label"] = "Casino Race Tracks",
+        ["coords"] = vector3(1104.49, 87.08, 80.89), 
+    },
+    [9] = {
+        ["label"] = "El Rancho Alley",
+        ["coords"] = vector3(1136.46, -1247.57, 21.19), 
+    },
+    [10] = {
+        ["label"] = " East Side Freezer Alley",
+        ["coords"] = vector3(979.76, -1659.31, 29.27), 
+    },
+    [11] = {
+        ["label"] = "Merryweather Docks",
+        ["coords"] = vector3(654.00, -3017.50, 6.15), 
+    },
+    [12] = {
+        ["label"] = "LSIA",
+        ["coords"] = vector3(-991.04, -2634.62, 13.98), 
+    },
+    [13] = {
+        ["label"] = "Chumash Pier",
+        ["coords"] = vector3(-3268.97, 954.53, 8.35), 
+    },
+    [14] = {
+        ["label"] = "Sandy Projects",
+        ["coords"] = vector3(1621.19, 3564.39, 35.29), 
+    },
+    [15] = {
+        ["label"] = "Paleto Bay",
+        ["coords"] = vector3(-358.91, 6062.09, 31.50)
     },
 }
