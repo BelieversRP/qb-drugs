@@ -1,96 +1,147 @@
 Config = Config or {}
 Config.Dealers = {}
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
-Config.PoliceCallChance = 50
+Config.PoliceCallChance = 15
 
 Config.NotifyType = 'qb' -- change to "okok" if you use that, ig
 
 -- Shop Config
-Config.Products = {}
+Config.Products = {
+    [1] = {
+        name = "weed_white-widow",
+        price = 15,
+        amount = 150,
+        info = {},
+        type = "item",
+        slot = 1,
+        minrep = 0,
+    },
+    [2] = {
+        name = "weed_skunk",
+        price = 15,
+        amount = 150,
+        info = {},
+        type = "item",
+        slot = 2,
+        minrep = 20,
+    },
+    [3] = {
+        name = "weed_purple-haze",
+        price = 15,
+        amount = 150,
+        info = {},
+        type = "item",
+        slot = 3,
+        minrep = 40,
+    },
+    [4] = {
+        name = "weed_og-kush",
+        price = 15,
+        amount = 150,
+        info = {},
+        type = "item",
+        slot = 4,
+        minrep = 60,
+    },
+    [5] = {
+        name = "weed_amnesia",
+        price = 15,
+        amount = 150,
+        info = {},
+        type = "item",
+        slot = 5,
+        minrep = 80,
+    },
+    [6] = {
+        name = "weed_white-widow_seed",
+        price = 15,
+        amount = 150,
+        info = {},
+        type = "item",
+        slot = 6,
+        minrep = 100,
+    },
+    [7] = {
+        name = "weed_skunk_seed",
+        price = 15,
+        amount = 150,
+        info = {},
+        type = "item",
+        slot = 7,
+        minrep = 120,
+    },
+    [8] = {
+        name = "weed_purple-haze_seed",
+        price = 15,
+        amount = 150,
+        info = {},
+        type = "item",
+        slot = 8,
+        minrep = 140,
+    },
+    [9] = {
+        name = "weed_og-kush_seed",
+        price = 15,
+        amount = 150,
+        info = {},
+        type = "item",
+        slot = 9,
+        minrep = 160,
+    },
+    [10] = {
+        name = "weed_amnesia_seed",
+        price = 15,
+        amount = 150,
+        info = {},
+        type = "item",
+        slot = 10,
+        minrep = 180,
+    },
+}
 
 -- Selling Config
-Config.SuccessChance = 70
-Config.ScamChance = 10
-Config.RobberyChance = 10
+Config.SuccessChance = 50
+Config.ScamChance = 25
+Config.RobberyChance = 25
 Config.Payment = "dirtymoney" -- change this to "dirtymoney". "markedbills" or "cash"
 Config.MinimumDrugSalePolice = 0
 
 Config.DrugsPrice = {
-    ["peyote_button"] = {
-        min = 25,
-        max = 50,
-    },
-    ["moonshine"] = {
-        min = 75,
-        max = 100,
-    },
-    ["bootlegvodka"] = {
-        min = 75,
-        max = 100,
-    },
-    ["shroombaggy"] = {
-        min = 50,
-        max = 75,
-    },
-    ["weed_skunk"] = {
-        min = 75,
-        max = 100,
+    ["weed_white-widow"] = {
+        min = 15,
+        max = 24,
     },
     ["weed_og-kush"] = {
-        min = 75,
-        max = 100,
+        min = 15,
+        max = 28,
     },
-    ["weed_white-widow"] = {
-        min = 75,
-        max = 100,
-    },
-    ["weed_ak47"] = {
-        min = 75,
-        max = 100,
+    ["weed_skunk"] = {
+        min = 15,
+        max = 31,
     },
     ["weed_amnesia"] = {
-        min = 75,
-        max = 100,
+        min = 18,
+        max = 34,
     },
     ["weed_purple-haze"] = {
-        min = 75,
-        max = 100,
+        min = 18,
+        max = 37,
     },
-    ["weed_gelato"] = {
-        min = 100,
-        max = 125,
-    },
-    ["weed_zkittlez"] = {
-        min = 100,
-        max = 125,
-    },
-    ["morphinebaggy"] = {
-        min = 80,
-        max = 120,
-    },
-    ["morphine"] = {
-        min = 100,
-        max = 150,
-    },
-    ["heroinbaggy"] = {
-        min = 80,
-        max = 120,
-    },
-    ["liquidheroin"] = {
-        min = 100,
-        max = 150,
+    ["weed_ak47"] = {
+        min = 18,
+        max = 40,
     },
     ["crack_baggy"] = {
-        min = 80,
-        max = 120,
-    },
-    ["meth"] = {
-        min = 120,
-        max = 170,
+        min = 18,
+        max = 34,
     },
     ["cokebaggy"] = {
-        min = 100,
-        max = 150,
+        min = 18,
+        max = 37,
+    },
+    ["meth"] = {
+        min = 18,
+        max = 40,
     },
 }
 
@@ -104,24 +155,14 @@ Config.OverdueDeliveryFee = 4 -- divide the payout by this value for overdue del
 
 Config.DeliveryItems = {
     [1] = {
-        ["item"] = "heroin_1oz",
-        ["minrep"] = 100,
-        ['payout'] = 500
+        ["item"] = "weed_brick",
+        ["minrep"] = 0,
+        ['payout'] = 1000
     },
     [2] = {
-        ["item"] = "crack_1oz",
-        ["minrep"] = 150,
-        ['payout'] = 500
-    },
-    [3] = {
-        ["item"] = "meth_1oz",
-        ["minrep"] = 200,
-        ['payout'] = 500
-    },
-    [4] = {
-        ["item"] = "coke_1oz",
-        ["minrep"] = 250,
-        ['payout'] = 500
+        ["item"] = "coke_brick",
+        ["minrep"] = 0,
+        ['payout'] = 1000
     },
 }
 
